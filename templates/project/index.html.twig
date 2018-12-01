@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'CMS - Projets' %}
+
+{% block body %}
+    {% for project in projects %}
+        <article>
+            <h2>{{ project.title }}</h2>
+            <p>{{ project.createdAt | date("d/m/Y") }}</p>
+            <p>{{ project.updatedAt | date("d/m/Y") }}</p>
+            <p>{{ project.doneAt | date("d/m/Y") }}</p>
+        </article>
+    {% endfor %}
+{% endblock %}
