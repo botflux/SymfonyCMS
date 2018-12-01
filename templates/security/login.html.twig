@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'CMS - Log in' %}
+
+{% block body %}
+    <form action="{{ path('security.login') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="_username" value="{{ lastUsername }}" />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password" />
+
+        <button type="submit">login</button>
+    </form>
+{% endblock %}
