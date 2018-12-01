@@ -12,6 +12,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "ckeditor5": "^11.1.1"
+        "@ckeditor/ckeditor5-build-classic": "^11.1.1",
+        "spectre.css": "^0.5.7"
     }
 }

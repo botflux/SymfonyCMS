@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {{ encore_entry_link_tags('spectre') }}
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+{% include 'admin/_modules/header.html.twig' %}
+{% block body %}{% endblock %}
+
+{{ encore_entry_script_tags('admin_app') }}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

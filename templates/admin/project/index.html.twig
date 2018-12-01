@@ -1,0 +1,37 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title 'CMS - Projects' %}
+
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Created at</th>
+                <th>Updated at</th>
+                <th>Done at</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for project in projects %}
+            <tr>
+                <td>{{ project.id }}</td>
+                <td>{{ project.body | slice(0, 200) }}</td>
+                <td>{{ project.createdAt | date('d/m/Y') }}</td>
+                <td>{{ project.updatedAt | date('d/m/Y') }}</td>
+                <td>{{ project.doneAt | date('d/m/Y') }}</td>
+                <td class="d-flex">
+                    <a href="{{ path('admin.project.edit', { id: project.id }) }}" class="btn btn-primary">Edit</a>
+                    <form action="{{ path('admin.project.delete', {id: project.id}) }}" class="d-inline">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn btn-error">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

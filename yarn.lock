@@ -524,6 +524,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@ckeditor/ckeditor5-build-classic@^11.1.1":
+  version "11.1.1"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-11.1.1.tgz#2eb3706bc83640bdc5f6d50e3a060aa70cf495aa"
+
 "@symfony/webpack-encore@^0.22.0":
   version "0.22.2"
   resolved "https://registry.yarnpkg.com/@symfony/webpack-encore/-/webpack-encore-0.22.2.tgz#036cffc86e2f4da2a194b5eabc2409c4ffe0d31b"
@@ -1231,10 +1235,6 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
-
-ckeditor5@^11.1.1:
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/ckeditor5/-/ckeditor5-11.1.1.tgz#f2da24b01a659e848ef6a4dd125ff5cc9e1cb06f"
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -4722,6 +4722,10 @@ spdy@^3.4.1:
     safe-buffer "^5.0.1"
     select-hose "^2.0.0"
     spdy-transport "^2.0.18"
+
+spectre.css@^0.5.7:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/spectre.css/-/spectre.css-0.5.7.tgz#bcc7f422e5f22170160824a49b3ef84e4537906c"
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"

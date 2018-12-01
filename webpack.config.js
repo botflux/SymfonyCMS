@@ -17,7 +17,8 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
+    .addEntry('admin_app', './assets/js/admin_app.js')
+    .addStyleEntry('spectre', 'spectre.css/dist/spectre.css')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
