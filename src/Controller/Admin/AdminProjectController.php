@@ -6,6 +6,7 @@ use App\Entity\Project;
 use App\Form\ProjectType;
 use App\Repository\ProjectRepository;
 use phpDocumentor\Reflection\Types\This;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,10 +17,15 @@ class AdminProjectController extends AbstractController
      * @var ProjectRepository
      */
     private $projectRepository;
+    /**
+     * @var ObjectManager
+     */
+    private $manager;
 
-    public function __construct(ProjectRepository $projectRepository)
+    public function __construct(ProjectRepository $projectRepository, ObjectManager $manager)
     {
         $this->projectRepository = $projectRepository;
+        $this->manager = $manager;
     }
 
     /**
@@ -31,6 +37,30 @@ class AdminProjectController extends AbstractController
 
         return $this->render('admin/project/index.html.twig', [
             'projects' => $projects
+        ]);
+    }
+
+    /**
+     * @Route("/admin/project/add", name="admin.project.add", methods="GET|POST")
+     * @param Request $request
+     */
+    public function add (Request $request)
+    {
+        $project = new Project();
+        $projectForm = $this->createForm(ProjectType::class, $project);
+
+        $projectForm->handleRequest($request);
+
+        if ($projectForm->isSubmitted() && $projectForm->isValid())
+        {
+            $project = $projectForm->getData();
+            $this->manager->persist($project);
+            $this->manager->flush();
+            return $this->redirectToRoute('admin.project.index', [], 301);
+        }
+
+        return $this->render('admin/project/add.html.twig', [
+           'form' => $projectForm->createView()
         ]);
     }
 
