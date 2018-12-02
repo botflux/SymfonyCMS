@@ -41,7 +41,7 @@ class AdminTagController extends AbstractController
     }
 
     /**
-     * @Route("admin/tag/{id}", name="admin.tag.edit")
+     * @Route("admin/tag/{id}", name="admin.tag.edit", methods="GET|POST")
      * @param Tag $tag
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -60,5 +60,18 @@ class AdminTagController extends AbstractController
         return $this->render('admin/tag/edit.html.twig', [
             'tagForm' => $tagForm->createView()
         ]);
+    }
+
+    /**
+     * @Route("admin/tag/{id}", methods="DELETE", name="admin.tag.delete", methods="DELETE")
+     * @param Tag $tag
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function delete (Tag $tag)
+    {
+        $this->manager->remove($tag);
+        $this->manager->flush();
+
+        return $this->redirectToRoute('admin.tag.index');
     }
 }

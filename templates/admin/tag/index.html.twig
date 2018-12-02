@@ -22,6 +22,10 @@
                         <td>{{ tag.projectsCount }}</td>
                         <td class="d-flex">
                             <a href="{{ path('admin.tag.edit', {id: tag.id}) }}" class="btn btn-primary">Edit</a>
+                            <form action="{{ path('admin.tag.delete', {id: tag.id}) }}" method="post" class="d-inline">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-error">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 {% endfor %}

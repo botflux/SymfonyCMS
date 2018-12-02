@@ -35,7 +35,7 @@ class AdminProjectController extends AbstractController
     }
 
     /**
-     * @Route("/admin/project/{id}", name="admin.project.edit")
+     * @Route("/admin/project/{id}", name="admin.project.edit", methods="GET|POST")
      * @param Project $project
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
