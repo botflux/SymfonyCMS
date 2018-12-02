@@ -1,0 +1,32 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title 'CMS - Tag Management' %}
+
+{% block body %}
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Project related count</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tag in tags %}
+                    <tr>
+                        <td>{{ tag.id }}</td>
+                        <td>{{ tag.name }}</td>
+                        <td>{{ tag.projectsCount }}</td>
+                        <td class="d-flex">
+                            <a href="{{ path('admin.tag.edit', {id: tag.id}) }}" class="btn btn-primary">Edit</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

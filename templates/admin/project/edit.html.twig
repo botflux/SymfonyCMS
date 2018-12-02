@@ -3,19 +3,5 @@
 {% block title 'Edit a project' %}
 
 {% block body %}
-    {{ form_start(form, {'attr': {'class': 'container'}}) }}
-        <div class="column col-12">
-            {{ form_row(form.title) }}
-        </div>
-        <div class="column col-12">
-            {{ form_row(form.description) }}
-        </div>
-        <div class="column col-12 form-group">
-            {{ form_row(form.body) }}
-        </div>
-        <div class="column col-4">
-            {{ form_row(form.doneAt) }}
-        </div>
-        <button type="submit" class="btn">Edit</button>
-    {{ form_end(form) }}
+    {% include 'admin/project/_modules/project_form.html.twig' %}
 {% endblock %}

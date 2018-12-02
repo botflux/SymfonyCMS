@@ -16,6 +16,7 @@ class TagFixtures extends Fixture
         for ($i = 0; $i < 20; $i++) {
             $tag = new Tag();
             $tag->setName($faker->words(4, true));
+            $manager->persist($tag);
         }
 
         $manager->flush();

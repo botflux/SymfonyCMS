@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Project;
+use App\Entity\Tag;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -23,6 +25,13 @@ class ProjectType extends AbstractType
                 ]
             ])
             ->add('doneAt', DateTimeType::class)
+            ->add('tags', EntityType::class, [
+                'class' => Tag::class,
+                'choice_label' => function (Tag $t) {
+                    return $t->getName();
+                },
+                'multiple' => true
+            ])
         ;
     }
 

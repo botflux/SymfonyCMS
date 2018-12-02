@@ -1,0 +1,18 @@
+{{ form_start(form, {'attr': {'class': 'container'}}) }}
+<div class="column col-12">
+    {{ form_row(form.title) }}
+</div>
+<div class="column col-12">
+    {{ form_row(form.description) }}
+</div>
+<div class="column col-12">
+    {{ form_row(form.body) }}
+</div>
+<div class="column col-4">
+    {{ form_row(form.doneAt) }}
+</div>
+<div class="colum col-4">
+    {{ form_row(form.tags) }}
+</div>
+<button type="submit" class="btn">Edit</button>
+{{ form_end(form) }}

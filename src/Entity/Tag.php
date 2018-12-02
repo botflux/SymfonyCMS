@@ -77,4 +77,13 @@ class Tag
 
         return $this;
     }
+
+    /**
+     * Returns the count of related projects
+     * @return int
+     */
+    public function getProjectsCount () : int
+    {
+        return count($this->projects);
+    }
 }
