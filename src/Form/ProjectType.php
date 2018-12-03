@@ -22,7 +22,8 @@ class ProjectType extends AbstractType
             ->add('body', TextareaType::class, [
                 'attr' => [
                     'class' => 'ckeditor'
-                ]
+                ],
+                'required' => false
             ])
             ->add('doneAt', DateTimeType::class)
             ->add('tags', EntityType::class, [

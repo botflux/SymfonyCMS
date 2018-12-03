@@ -3,9 +3,7 @@
 {% block title 'CMS - Tag Management' %}
 
 {% block body %}
-
-    <div class="container">
-        <table class="table table-striped">
+        <table class="table is-striped is-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -20,17 +18,15 @@
                         <td>{{ tag.id }}</td>
                         <td>{{ tag.name }}</td>
                         <td>{{ tag.projectsCount }}</td>
-                        <td class="d-flex">
-                            <a href="{{ path('admin.tag.edit', {id: tag.id}) }}" class="btn btn-primary">Edit</a>
-                            <form action="{{ path('admin.tag.delete', {id: tag.id}) }}" method="post" class="d-inline">
+                        <td class="is-flex">
+                            <a href="{{ path('admin.tag.edit', {id: tag.id}) }}" class="button is-primary">Edit</a>
+                            <form action="{{ path('admin.tag.delete', {id: tag.id}) }}" method="post">
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button class="btn btn-error">Delete</button>
+                                <button class="button is-danger">Delete</button>
                             </form>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-    </div>
-
 {% endblock %}

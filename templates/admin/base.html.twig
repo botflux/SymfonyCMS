@@ -2,13 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {{ encore_entry_link_tags('spectre') }}
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
-{% include 'admin/_modules/header.html.twig' %}
-{% block body %}{% endblock %}
+<section class="section columns">
+    {% include 'admin/_modules/header.html.twig' %}
+    <div class="container is-fluid column is-four-fifths">
+        {% block body %}{% endblock %}
+    </div>
+</section>
 
 {{ encore_entry_script_tags('admin_app') }}
 {% block javascripts %}{% endblock %}

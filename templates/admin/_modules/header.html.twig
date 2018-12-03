@@ -1,7 +1,14 @@
-<header class="navbar bg-primary mb-2">
-    <section class="navbar-section">
-        <a href="{{ path('admin.index') }}" class="navbar-brand mr-2 text-secondary">AdminPanel</a>
-        <a href="{{ path('admin.project.index') }}" class="btn btn-link text-secondary">Projects</a>
-        <a href="{{ path('admin.tag.index') }}" class="btn btn-link text-secondary">Tags</a>
-    </section>
-</header>
+<aside class="menu column is-one-fifth">
+    <p>Entities</p>
+    <ul class="menu-list">
+        <li>
+            <a href="{{ path('admin.index') }}" class="navbar-brand mr-2 text-secondary">AdminPanel</a>
+        </li>
+        <li>
+            <a href="{{ path('admin.project.index') }}" class="btn btn-link text-secondary">Projects</a>
+        </li>
+        <li>
+            <a href="{{ path('admin.tag.index') }}" class="btn btn-link text-secondary">Tags</a>
+        </li>
+    </ul>
+</aside>
