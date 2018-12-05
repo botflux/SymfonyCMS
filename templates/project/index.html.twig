@@ -6,6 +6,9 @@
     {% for project in projects %}
         <article>
             <h2>{{ project.title }}</h2>
+            {% if project.filename is not empty %}
+                <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('thumb') }}" alt="My image">
+            {% endif %}
             <p>{{ project.createdAt | date("d/m/Y") }}</p>
             <p>{{ project.updatedAt | date("d/m/Y") }}</p>
             <p>{{ project.doneAt | date("d/m/Y") }}</p>

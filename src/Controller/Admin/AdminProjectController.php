@@ -5,8 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\Project;
 use App\Form\ProjectType;
 use App\Repository\ProjectRepository;
-use phpDocumentor\Reflection\Types\This;
 use Doctrine\Common\Persistence\ObjectManager;
+use Liip\ImagineBundle\Imagine\Cache\CacheManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -79,8 +79,6 @@ class AdminProjectController extends AbstractController
         $projectForm->handleRequest($request);
 
         if ($projectForm->isSubmitted() && $projectForm->isValid()) {
-
-            $project = $projectForm->getData();
             $project->setUpdatedAt(new \DateTime());
             $this->manager->flush();
 

@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
@@ -31,6 +32,9 @@ class Project
 
     /**
      * @var File|null
+     * @Assert\Image(
+     *     mimeTypes="image/jpeg"
+     * )
      * @Vich\UploadableField(mapping="project_image", fileNameProperty="filename")
      */
     private $imageFile;
