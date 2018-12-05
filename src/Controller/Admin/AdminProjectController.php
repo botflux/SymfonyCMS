@@ -66,7 +66,7 @@ class AdminProjectController extends AbstractController
     }
 
     /**
-     * @Route("/admin/project/{id}", name="admin.project.edit", methods="GET|POST", requirments={"id": "\d+"})
+     * @Route("/admin/project/{id}", name="admin.project.edit", methods="GET|POST", requirements={"id": "\d+"})
      * @param Project $project
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -92,7 +92,7 @@ class AdminProjectController extends AbstractController
     /**
      * @param Project $project
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     * @Route("/admin/project/{id}", name="admin.project.delete", methods="DELETE", requirments={"id": "\d+"})
+     * @Route("/admin/project/{id}", name="admin.project.delete", methods="DELETE", requirements={"id": "\d+"})
      */
     public function delete (Project $project)
     {
