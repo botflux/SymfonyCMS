@@ -1,14 +1,16 @@
-<aside class="menu column is-one-fifth">
-    <p>Entities</p>
-    <ul class="menu-list">
-        <li>
-            <a href="{{ path('admin.index') }}" class="navbar-brand mr-2 text-secondary">AdminPanel</a>
-        </li>
-        <li>
-            <a href="{{ path('admin.project.index') }}" class="btn btn-link text-secondary">Projects</a>
-        </li>
-        <li>
-            <a href="{{ path('admin.tag.index') }}" class="btn btn-link text-secondary">Tags</a>
-        </li>
-    </ul>
-</aside>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="{{ path('admin.index') }}">CMS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="{{ path('admin.project.index') }}" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('admin.tag.index') }}">Tags</a>
+            </li>
+        </ul>
+    </div>
+</nav>

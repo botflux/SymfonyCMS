@@ -3,46 +3,44 @@
 {% block title 'CMS - Projects' %}
 
 {% block body %}
-    <div class="container">
-        <div class="d-flex">
-            <a href="{{ path('admin.project.add') }}" class="button is-success">Add</a>
-        </div>
-        <table class="table is-striped is-bordered">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Created at</th>
-                <th>Updated at</th>
-                <th>Done at</th>
-                <th>Tags</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            {% for project in projects %}
-                <tr>
-                    <td>{{ project.id }}</td>
-                    <td>{{ project.title }}</td>
-                    <td>{{ project.createdAt | date('d/m/Y') }}</td>
-                    <td>{{ project.updatedAt | date('d/m/Y') }}</td>
-                    <td>{{ project.doneAt | date('d/m/Y') }}</td>
-                    <td>
-                        {% for tag in project.tags %}
-                            <span class="tag">{{ tag.name }}</span>
-                        {% endfor %}
-                    </td>
-                    <td class="is-flex">
-                        <a href="{{ path('admin.project.edit', { id: project.id }) }}" class="button is-primary">Edit</a>
-                        <form action="{{ path('admin.project.delete', {id: project.id}) }}" class="d-inline" method="post">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="button is-danger">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+    <div class="d-flex mb-4">
+        <a href="{{ path('admin.project.add') }}" class="btn btn-success">Add</a>
     </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Created at</th>
+            <th>Updated at</th>
+            <th>Done at</th>
+            <th>Tags</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for project in projects %}
+            <tr>
+                <td>{{ project.id }}</td>
+                <td>{{ project.title }}</td>
+                <td>{{ project.createdAt | date('d/m/Y') }}</td>
+                <td>{{ project.updatedAt | date('d/m/Y') }}</td>
+                <td>{{ project.doneAt | date('d/m/Y') }}</td>
+                <td>
+                    {% for tag in project.tags %}
+                        <span class="badge badge-secondary">{{ tag.name }}</span>
+                    {% endfor %}
+                </td>
+                <td class="d-flex">
+                    <a href="{{ path('admin.project.edit', { id: project.id }) }}" class="btn btn-primary mr-2">Edit</a>
+                    <form action="{{ path('admin.project.delete', {id: project.id}) }}" class="d-inline" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

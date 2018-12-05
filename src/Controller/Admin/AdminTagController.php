@@ -41,7 +41,33 @@ class AdminTagController extends AbstractController
     }
 
     /**
-     * @Route("admin/tag/{id}", name="admin.tag.edit", methods="GET|POST")
+     * @Route("/admin/tag/add", name="admin.tag.add", methods="GET|POST")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function add (Request $request)
+    {
+        $tag = new Tag();
+
+        $tagForm = $this->createForm(TagType::class, $tag);
+        $tagForm->handleRequest($request);
+
+        if ($tagForm->isSubmitted() && $tagForm->isValid()) {
+            $tag = $tagForm->getData();
+
+            $this->manager->persist($tag);
+            $this->manager->flush();
+
+            return $this->redirectToRoute('admin.tag.index', [], 301);
+        }
+
+        return $this->render('admin/tag/add.html.twig', [
+            'tagForm' => $tagForm->createView()
+        ]);
+    }
+
+    /**
+     * @Route("admin/tag/{id}", name="admin.tag.edit", methods="GET|POST", requirements={"id": "\d+"})
      * @param Tag $tag
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -63,7 +89,7 @@ class AdminTagController extends AbstractController
     }
 
     /**
-     * @Route("admin/tag/{id}", methods="DELETE", name="admin.tag.delete", methods="DELETE")
+     * @Route("admin/tag/{id}", methods="DELETE", name="admin.tag.delete", methods="DELETE", requirements={"id": "\d+"})
      * @param Tag $tag
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
@@ -74,4 +100,5 @@ class AdminTagController extends AbstractController
 
         return $this->redirectToRoute('admin.tag.index');
     }
+
 }

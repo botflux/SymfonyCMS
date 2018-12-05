@@ -43,6 +43,7 @@ class AdminProjectController extends AbstractController
     /**
      * @Route("/admin/project/add", name="admin.project.add", methods="GET|POST")
      * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function add (Request $request)
     {
@@ -65,7 +66,7 @@ class AdminProjectController extends AbstractController
     }
 
     /**
-     * @Route("/admin/project/{id}", name="admin.project.edit", methods="GET|POST")
+     * @Route("/admin/project/{id}", name="admin.project.edit", methods="GET|POST", requirments={"id": "\d+"})
      * @param Project $project
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -90,11 +91,10 @@ class AdminProjectController extends AbstractController
 
     /**
      * @param Project $project
-     * @param Request $request
-     * @Route("/admin/project/{id}", name="admin.project.delete", methods="DELETE")
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/admin/project/{id}", name="admin.project.delete", methods="DELETE", requirments={"id": "\d+"})
      */
-    public function delete (Project $project, Request $request)
+    public function delete (Project $project)
     {
         $em = $this->getDoctrine()->getManager();
         $em->remove($project);

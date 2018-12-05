@@ -14,7 +14,6 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "@ckeditor/ckeditor5-build-classic": "^11.1.1",
-        "bulma": "^0.7.2"
+        "@ckeditor/ckeditor5-build-classic": "^11.1.1"
     }
 }
