@@ -1,0 +1,37 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title 'CMS - Learning Subject' %}
+
+{% block body %}
+    <div class="d-flex mb-4">
+        <a href="{{ path('admin.learning-subject.add') }}" class="btn btn-success">Add</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Priority</th>
+                <th>Tag</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for learningSubject in learningSubjects %}
+            <tr>
+                <td>{{ learningSubject.id }}</td>
+                <td>{{ learningSubject.title }}</td>
+                <td>{{ learningSubject.priorityString }}</td>
+                <td>{{ learningSubject.tag ? learningSubject.tag.name : 'No tag' }}</td>
+                <td class="d-flex">
+                    <a href="{{ path('admin.learning-subject.edit', {id: learningSubject.id}) }}" class="btn btn-primary mr-2">Edit</a>
+                    <form action="{{ path('admin.learning-subject.delete', {id: learningSubject.id}) }}" method="post" class="d-inline">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

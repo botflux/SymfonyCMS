@@ -28,9 +28,15 @@ class Tag
      */
     private $projects;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\LearningSubject", mappedBy="tag")
+     */
+    private $learningSubjects;
+
     public function __construct()
     {
         $this->projects = new ArrayCollection();
+        $this->learningSubjects = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -85,5 +91,36 @@ class Tag
     public function getProjectsCount () : int
     {
         return count($this->projects);
+    }
+
+    /**
+     * @return Collection|LearningSubject[]
+     */
+    public function getLearningSubjects(): Collection
+    {
+        return $this->learningSubjects;
+    }
+
+    public function addLearningSubject(LearningSubject $learningSubject): self
+    {
+        if (!$this->learningSubjects->contains($learningSubject)) {
+            $this->learningSubjects[] = $learningSubject;
+            $learningSubject->setTag($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLearningSubject(LearningSubject $learningSubject): self
+    {
+        if ($this->learningSubjects->contains($learningSubject)) {
+            $this->learningSubjects->removeElement($learningSubject);
+            // set the owning side to null (unless already changed)
+            if ($learningSubject->getTag() === $this) {
+                $learningSubject->setTag(null);
+            }
+        }
+
+        return $this;
     }
 }

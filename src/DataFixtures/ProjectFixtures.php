@@ -17,6 +17,7 @@ class ProjectFixtures extends Fixture
             $project = (new Project())
                 ->setTitle($faker->words(5, true))
                 ->setBody($faker->sentences(70, true))
+                ->setFilename(null)
                 ->setDoneAt($faker->dateTime())
                 ;
 

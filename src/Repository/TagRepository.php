@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Faker\Factory;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -17,6 +18,20 @@ class TagRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Tag::class);
+    }
+
+    /**
+     * Returns a random tag
+     * @return Tag|null
+     */
+    public function randomTag () : ?Tag
+    {
+        $faker = Factory::create();
+        $all = $this->findAll();
+
+        $n = $faker->numberBetween(0, count($all));
+
+        return $all[$n];
     }
 
     // /**
