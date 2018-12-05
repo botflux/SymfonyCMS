@@ -70,6 +70,7 @@ class AdminProjectController extends AbstractController
      * @param Project $project
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
      */
     public function edit (Project $project, Request $request)
     {
@@ -78,8 +79,10 @@ class AdminProjectController extends AbstractController
         $projectForm->handleRequest($request);
 
         if ($projectForm->isSubmitted() && $projectForm->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->flush();
+
+            $project = $projectForm->getData();
+            $project->setUpdatedAt(new \DateTime());
+            $this->manager->flush();
 
             return $this->redirectToRoute('admin.project.index', [], 301);
         }
