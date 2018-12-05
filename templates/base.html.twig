@@ -3,12 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{ encore_entry_link_tags('style') }}
+        {{ encore_entry_link_tags('bundles') }}
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-
+        <div class="container">
+            {% include '_modules/header.html.twig' %}
+            {% block body %}{% endblock %}
+        </div>
+        {{ encore_entry_script_tags('app') }}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

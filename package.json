@@ -1,6 +1,7 @@
 {
     "devDependencies": {
         "@symfony/webpack-encore": "^0.22.0",
+        "copy-webpack-plugin": "^4.6.0",
         "node-sass": "^4.10.0",
         "sass-loader": "7.0.1",
         "webpack-notifier": "^1.6.0"
@@ -14,6 +15,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "@ckeditor/ckeditor5-build-classic": "^11.1.1"
+        "@ckeditor/ckeditor5-build-classic": "^11.1.1",
+        "material-icons": "^0.2.3"
     }
 }

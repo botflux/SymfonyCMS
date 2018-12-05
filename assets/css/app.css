@@ -1,3 +1,260 @@
+:root {
+    --background-primary: #1D1D25;
+    --background-card: #1D1D27;
+    --background-darker: #16161C;
+    --color-primary: #FF004E;
+    --color-secondary: #590FF0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
 body {
-    background-color: lightgray;
+    min-height: 100vh;
+    margin: 0;
+
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    color: #fff;
+
+    background: var(--background-primary);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*======================================
+    Base layout
+======================================*/
+.container {
+    min-height: 100vh;
+}
+
+.content {
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.content__section {
+    padding: 0 36px 120px 36px;
+}
+
+/*=======================================
+    Header
+=======================================*/
+.header {
+    padding: 36px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__brand {
+    font-size: 1rem;
+}
+
+/*=======================================
+    Nav
+=======================================*/
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav__list {
+    display: none;
+}
+
+/*==========================================
+    Landing
+    This section is used only on the home page
+==========================================*/
+.landing {
+    min-height: calc(100vh - 96px);
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    padding: 0 36px;
+}
+
+.landing__img {
+    width: 109px;
+    height: 115px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+/*=========================================
+    Card
+=========================================*/
+.card-holder {
+    display: grid;
+    grid-gap: 32px;
+}
+
+.card {
+    background: var(--background-card);
+    padding: 24px;
+
+    display: grid;
+    justify-content: center;
+    grid-gap: 55px;
+
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.card-section {
+    display: grid;
+    grid-gap: 40px;
+    justify-content: center;
+}
+
+.card-enumeration {
+    margin: 0;
+    padding: 0;
+}
+
+.card-enumeration__item {
+    display: inline-block;
+}
+
+.card-enumeration__item::after {
+    content: ", ";
+}
+
+.card-enumeration__item:last-child::after {
+    content: ".";
+}
+
+/*========================================
+    Button
+========================================*/
+.btn {
+    font-weight: 500;
+    font-size: .75rem;
+    letter-spacing: .052rem;
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+
+    display: inline-block;
+    margin-right: auto;
+
+}
+
+.btn--primary {
+    background: var(--color-primary);
+}
+
+.btn--large {
+    padding: 2em 5.3em;
+}
+
+.btn--small {
+    padding: 1.2em 2.5em;
+}
+
+.button-group {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 12px;
+    align-items: center;
+}
+
+/*=======================================
+    Typography
+=======================================*/
+.text--primary {
+    color: #fff;
+}
+
+.text--secondary {
+    color: rgba(255, 255, 255, .54);
+}
+
+.text--overline {
+    font-size: .625rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: 'Roboto Slab', monospace;
+    letter-spacing: .04rem;
+}
+
+.title {
+    font-weight: 400;
+    display: inline-block;
+}
+
+.title--1 {
+    font-size: 2.4375rem;
+}
+
+.title--2 {
+    font-size: 1.9375rem;
+}
+
+.title--3 {
+    font-size: 1.6875rem;
+}
+
+.title--underline {
+    position: relative;
+}
+
+.title--underline::after {
+    content: " ";
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 50%;
+
+    background: var(--color-secondary);
+    opacity: .16;
+}
+
+.text {
+    letter-spacing: .014rem;
+    line-height: 1.625rem;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+/*============================================
+    Special background
+============================================*/
+.special-background {
+    background: var(--background-darker);
+    padding-top: 200px;
+    margin-top: -100px;
+    clip-path: url("#clip-path-background");
+
+}
+
+/*=============================================
+    Utils
+=============================================*/
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-55 {
+    margin-bottom: 55px;
+}
+
+.mr-auto {
+    margin-right: auto;
 }

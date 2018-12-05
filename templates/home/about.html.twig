@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Victor Mendele - A propos' %}
+
+{% block body %}
+    <main class="content">
+        <section class="content__section">
+            <p class="text--overline">Développeur web & software</p>
+            <h1 class="title title--1 mb-55">A propos</h1>
+
+            <p class="text mb-40 text--secondary">Je suis actuellement étudiant en licence professionnelle Développeur Web / Designer Web à l'IUT de Mulhouse. J'ai commencé le développement en m'intéressant au développement logiciel et plus particulièrement le développement de jeux. Cette passion s'est ensuite développé pour atteindre le développement Web.</p>
+            <p class="text mb-40 text--secondary">Lors ce que je développe une application, tous les aspects de la création m'intéresse que ce soit le design ou encore le développement. Venant d'une formation de développeur logiciel (BTS Systèmes numériques), je suis à l'aise que ce soit avec les outils côté serveur ou côté client.</p>
+            <p class="text mb-55 text--secondary">Cette formation et ma curiosité naturelle me pousse également a essayé de comprendre comment les outils que j'utilise fonctionnent en arrière-plan afin de proposé le meilleur service possible.</p>
+
+            <div class="button-group">
+                <a href="{{ path('project.index') }}" class="btn btn--primary btn--small">Mes projets</a>
+            </div>
+        </section>
+
+        <section class="content__section special-background">
+            <h2 class="title title--2 title--underline mr-auto mb-55">Compétences</h2>
+
+            <div class="card-holder">
+                <article class="card">
+                    <div class="card-section">
+                        <h3 class="title title--3 text-centered">Software</h3>
+                        <p class="text text-centered text--secondary">Le développement d'applications logicielles est le domaine dans lequel je suis le plus à l'aise. J'aime énormément créer des applications de bureau solides.</p>
+                    </div>
+
+                    <div class="card-section text-centered">
+                        <h4 class="title title--4">Langages</h4>
+                        <ul class="card-enumeration text--secondary">
+                            <li class="card-enumeration__item">C#</li>
+                            <li class="card-enumeration__item">C++</li>
+                            <li class="card-enumeration__item">Java</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-section text-centered">
+                        <h4 class="title title--4">Outils</h4>
+                        <ul class="card-enumeration  text--secondary">
+                            <li class="card-enumeration__item">.NET</li>
+                            <li class="card-enumeration__item">Unity 3D</li>
+                            <li class="card-enumeration__item">Android Studio SDK</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-section">
+                        <h3 class="title title--3 text-centered">Front-end</h3>
+                        <p class="text text-centered text--secondary">Créer des applications et expériences utilisateurs est quelque chose que me plait énormément. Autant le design que le développement.</p>
+                    </div>
+
+                    <div class="card-section text-centered">
+                        <h4 class="title title--4">Langages</h4>
+                        <ul class="card-enumeration text--secondary">
+                            <li class="card-enumeration__item">Javascript</li>
+                            <li class="card-enumeration__item">HTML</li>
+                            <li class="card-enumeration__item">CSS</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-section text-centered">
+                        <h4 class="title title--4">Outils</h4>
+                        <ul class="card-enumeration text--secondary">
+                            <li class="card-enumeration__item">Vue.js</li>
+                            <li class="card-enumeration__item">SCSS</li>
+                            <li class="card-enumeration__item">Webpack</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-section">
+                        <h3 class="title title--3 text-centered">Back-end</h3>
+                        <p class="text text-centered text--secondary">Les applications côté serveur sont également très plaisante à développer. Que ce soit des APIs ou encore des micro-services.</p>
+                    </div>
+
+                    <div class="card-section text-centered">
+                        <h4 class="title title--4">Langages</h4>
+                        <ul class="card-enumeration text--secondary">
+                            <li class="card-enumeration__item">PHP</li>
+                            <li class="card-enumeration__item">MySQL</li>
+                            <li class="card-enumeration__item">Javascript</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-section text-centered">
+                        <h4 class="title title--4">Outils</h4>
+                        <ul class="card-enumeration text--secondary">
+                            <li class="card-enumeration__item">Symfony</li>
+                            <li class="card-enumeration__item">NodeJS</li>
+                            <li class="card-enumeration__item">Silex</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="content__section">
+            <h2 class="title title--2 title--underline">Apprentissage</h2>
+        </section>
+
+        <svg>
+            <defs>
+                <clipPath id="clip-path-background" clipPathUnits="objectBoundingBox">
+                    <path d="M 0 0.05 C 0.3 0 0.7 0 1 0.05 V 0.95 C 0.2 1 0 1 0 0.95 H 0 Z" />
+                </clipPath>
+            </defs>
+        </svg>
+    </main>
+{% endblock %}
