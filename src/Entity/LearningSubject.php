@@ -10,10 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
 class LearningSubject
 {
     const PRIORITY = [
-      1 => "HIGH",
-      2 => "MEDIUM",
-      3 => "SMALL",
-      4 => "COMMON"
+      1 => "COMMON",
+      2 => "SMALL",
+      3 => "MEDIUM",
+      4 => "HIGH"
     ];
 
     /**

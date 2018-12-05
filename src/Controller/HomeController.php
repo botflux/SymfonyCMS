@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\LearningSubjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,11 +17,16 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @param LearningSubjectRepository $repository
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/about", name="home.about")
      */
-    public function about()
+    public function about(LearningSubjectRepository $repository)
     {
-        return $this->render('home/about.html.twig');
+        $learningSubjects = $repository->findMostImportant ();
+
+        return $this->render('home/about.html.twig', [
+            'learningSubjects' => $learningSubjects
+        ]);
     }
 }

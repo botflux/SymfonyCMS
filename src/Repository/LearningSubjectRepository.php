@@ -19,6 +19,19 @@ class LearningSubjectRepository extends ServiceEntityRepository
         parent::__construct($registry, LearningSubject::class);
     }
 
+    /**
+     * @return LearningSubject[]|null
+     */
+    public function findMostImportant () : ?array
+    {
+        return $this->createQueryBuilder('l')
+            ->orderBy('l.priority', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return LearningSubject[] Returns an array of LearningSubject objects
     //  */

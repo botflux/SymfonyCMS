@@ -137,9 +137,32 @@ a {
 }
 
 /*=============================================
-    Mosaique
+    Tiles
 =============================================*/
+.card-holder--tiles {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row dense;
+}
 
+.card-holder--tiles__1__1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.card-holder--tiles__2__1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.card-holder--tiles__3__1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.card-holder--tiles__4__1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
 
 
 /*========================================
@@ -211,6 +234,10 @@ a {
 
 .title--3 {
     font-size: 1.6875rem;
+}
+
+.title--4 {
+    font-size: 1.4375rem;
 }
 
 .title--underline {

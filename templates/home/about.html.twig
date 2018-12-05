@@ -97,7 +97,19 @@
         </section>
 
         <section class="content__section">
-            <h2 class="title title--2 title--underline">Apprentissage</h2>
+            <h2 class="title title--2 title--underline mb-55">Apprentissage</h2>
+            <div class="card-holder card-holder--tiles">
+                {% for learningSubject in learningSubjects %}
+                    <div class="card card-holder--tiles__{{ learningSubject.priority }}__1">
+                        <div class="card-section text-centered">
+                            {% if learningSubject.tag %}
+                            <p class="title title--4 text--overline">{{ learningSubject.tag.name }}</p>
+                            {% endif %}
+                            <p class="title title--4">{{ learningSubject.title }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </section>
 
         <svg>
