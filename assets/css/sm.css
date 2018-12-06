@@ -1,0 +1,78 @@
+/*=============================================
+    Base layout
+=============================================*/
+.content__section {
+    padding: 0 80px 120px 80px;
+}
+
+/*================================================
+    Card holder
+================================================*/
+.card-holder {
+    grid-template-columns: .8fr;
+    justify-content: center;
+}
+
+/*==============================================
+    Tiles
+==============================================*/
+.card-holder--tiles {
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-holder--tiles__4__1, .card-holder--tiles__3__1 {
+    grid-column: span 2;
+}
+
+/*===============================================
+    Special background
+===============================================*/
+.special-background {
+    padding-top: 200px;
+}
+
+/*====================================================
+    Article
+====================================================*/
+.article__image {
+    height: 500px;
+}
+
+/*=========================================
+    Landing
+=========================================*/
+.landing__img {
+    width: 159px;
+    height: 167px;
+}
+
+.landing {
+    padding: 0 80px;
+}
+
+/*===========================================
+    Typography
+===========================================*/
+.text--overline {
+    font-size: .875rem;
+}
+
+.title--1 {
+    font-size: 3.625rem;
+}
+
+.title--2 {
+    font-size: 2.8125rem;
+}
+
+.title--3 {
+    font-size: 2.1875rem;
+}
+
+.title--4 {
+    font-size: 1.5625rem;
+}
+
+.header__brand {
+    font-size: 1.25rem;
+}

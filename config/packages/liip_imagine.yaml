@@ -6,6 +6,12 @@ liip_imagine:
         thumbnail:
           size: [360, 230]
           mode: outbound
+    article_image:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [888, 500]
+          mode: outbound
 
 
 #liip_imagine:

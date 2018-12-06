@@ -15,18 +15,19 @@
                     <article class="article">
                         {% if project.filename %}
                             <div class="article__image__container">
-                                <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('thumb') }}" alt="A super image" class="article__image elevation-1">
+                                <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('article_image') }}" alt="A super image" class="article__image elevation-1">
                             </div>
                         {% endif %}
                         <div class="article__body">
                             <p class="text--overline">{{ project.category ? project.category.name : '' }}</p>
-                            <h2 class="title title--3 title--underline mb-55">{{ project.title }}</h2>
+                            <h2 class="title title--3 title--underline mb-55 mr-auto">{{ project.title }}</h2>
                             <p class="text text--secondary mb-40">{{ project.description }}</p>
-                            <ul class="article__enumeration">
+                            <ul class="article__enumeration mb-55">
                                 {% for tag in project.tags %}
                                     <li class="article__enumeration__item text--hashtag">{{ tag.name }}</li>
                                 {% endfor %}
                             </ul>
+                            <a href="#" class="btn btn--primary btn--large">En savoir plus</a>
                         </div>
                     </article>
                 {% endfor %}

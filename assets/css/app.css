@@ -19,6 +19,8 @@ body {
     color: #fff;
 
     background: var(--background-primary);
+
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -169,12 +171,16 @@ a {
 ==========================================*/
 .article-holder {
     display: grid;
-    grid-gap: 55px;
+    grid-gap: 75px;
 }
 
 .article {
     display: grid;
     grid-gap: 55px;
+}
+
+.article__body {
+    display: grid;
 }
 
 .article__image__container {
@@ -183,7 +189,7 @@ a {
 
 .article__image {
     width: 100%;
-    height: 200px;
+    height: 324px;
 
     object-fit: cover;
 
@@ -346,4 +352,16 @@ a {
 
 .elevation-1 {
     box-shadow: 0 3px 3px 3px rgba(0,0,0,.2);
+}
+
+
+/*===================================================
+    Clip path svgs hidding
+===================================================*/
+.about-clip-path-svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -5000;
 }

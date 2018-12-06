@@ -1,5 +1,4 @@
 var Encore = require('@symfony/webpack-encore');
-var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 Encore
     // directory where compiled assets will be stored
@@ -11,6 +10,9 @@ Encore
 
     .addStyleEntry('style', './assets/css/app.css')
     .addStyleEntry('bundles', './assets/css/bundles.scss')
+    .addStyleEntry('sm', './assets/css/sm.css')
+    .addStyleEntry('md', './assets/css/md.css')
+    .addStyleEntry('md-l', './assets/css/md-l.css')
     /*
      * ENTRY CONFIG
      *

@@ -1,0 +1,50 @@
+/*=========================================
+    Landing
+=========================================*/
+.landing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+    grid-gap: 40px;
+}
+
+.landing__content {
+    direction: ltr;
+}
+
+.landing__img {
+    width: 100%;
+    height: auto;
+}
+
+/*=============================================
+    Card
+=============================================*/
+.card-holder {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.card-holder--tiles {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card-holder--tiles__2__1 {
+    grid-column: span 2;
+}
+
+.card-holder--tiles__3__1 {
+    grid-column: span 3;
+}
+
+.card-holder--tiles__4__1 {
+    grid-column: span 4;
+}
+
+/*===============================================
+    Article
+===============================================*/
+.article-holder {
+    grid-template-columns: .8fr;
+    justify-content: center;
+}
