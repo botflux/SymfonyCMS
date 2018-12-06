@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use App\Entity\Project;
 use App\Entity\Tag;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -33,6 +34,12 @@ class ProjectType extends AbstractType
                     return $t->getName();
                 },
                 'multiple' => true
+            ])
+            ->add('category', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => function (Category $c) {
+                    return $c->getName();
+                }
             ])
             ->add('imageFile', FileType::class, [
                 "required" => false

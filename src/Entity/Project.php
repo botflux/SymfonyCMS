@@ -74,6 +74,11 @@ class Project
      */
     private $tags;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="projects")
+     */
+    private $category;
+
     public function __construct()
     {
         $this->setCreatedAt(new \DateTime());
@@ -217,6 +222,18 @@ class Project
     public function setImageFile(?File $imageFile): Project
     {
         $this->imageFile = $imageFile;
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
         return $this;
     }
 

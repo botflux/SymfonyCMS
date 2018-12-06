@@ -14,6 +14,7 @@
             <th>Created at</th>
             <th>Updated at</th>
             <th>Done at</th>
+            <th>Category</th>
             <th>Tags</th>
             <th>Actions</th>
         </tr>
@@ -27,6 +28,7 @@
                 <td>{{ project.createdAt | date('d/m/Y') }}</td>
                 <td>{{ project.updatedAt | date('d/m/Y') }}</td>
                 <td>{{ project.doneAt | date('d/m/Y') }}</td>
+                <td>{{ project.category ? project.category.name : '' }}</td>
                 <td>
                     {% for tag in project.tags %}
                         <span class="badge badge-secondary">{{ tag.name }}</span>
