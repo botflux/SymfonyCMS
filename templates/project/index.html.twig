@@ -19,6 +19,7 @@
                             </div>
                         {% endif %}
                         <div class="article__body">
+                            <p class="text--overline">{{ project.category ? project.category.name : '' }}</p>
                             <h2 class="title title--3 title--underline mb-55">{{ project.title }}</h2>
                             <p class="text text--secondary mb-40">{{ project.description }}</p>
                             <ul class="article__enumeration">
