@@ -164,6 +164,54 @@ a {
     grid-row: span 1;
 }
 
+/*==========================================
+    Article
+==========================================*/
+.article-holder {
+    display: grid;
+    grid-gap: 55px;
+}
+
+.article {
+    display: grid;
+    grid-gap: 55px;
+}
+
+.article__image__container {
+    overflow: hidden;
+}
+
+.article__image {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+}
+
+.article__enumeration {
+    display: inline-block;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.article__enumeration__item {
+    display: inline;
+    color: var(--color-primary);
+}
+
+.article__enumeration__item::before {
+    content: "#";
+}
+
+.article__enumeration__item::after {
+    content: ",";
+}
+
+.article__enumeration__item:last-child::after {
+    content: "";
+}
 
 /*========================================
     Button
@@ -288,6 +336,14 @@ a {
     margin-bottom: 55px;
 }
 
+.mb-75 {
+    margin-bottom: 75px;
+}
+
 .mr-auto {
     margin-right: auto;
+}
+
+.elevation-1 {
+    box-shadow: 0 3px 3px 3px rgba(0,0,0,.2);
 }

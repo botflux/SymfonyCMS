@@ -3,15 +3,33 @@
 {% block title 'CMS - Projets' %}
 
 {% block body %}
-    {% for project in projects %}
-        <article>
-            <h2>{{ project.title }}</h2>
-            {% if project.filename is not empty %}
-                <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('thumb') }}" alt="My image">
-            {% endif %}
-            <p>{{ project.createdAt | date("d/m/Y") }}</p>
-            <p>{{ project.updatedAt | date("d/m/Y") }}</p>
-            <p>{{ project.doneAt | date("d/m/Y") }}</p>
-        </article>
-    {% endfor %}
+    <main class="content">
+        <section class="content__section">
+            <p class="text--overline">Project web & software</p>
+            <h1 class="title title--1 mb-55">Projets</h1>
+
+            <p class="text text--secondary mb-75">Voici les différents projets sur lesquels j'ai pu travailler.</p>
+
+            <div class="article-holder">
+                {% for project in projects %}
+                    <article class="article">
+                        {% if project.filename %}
+                            <div class="article__image__container">
+                                <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('thumb') }}" alt="A super image" class="article__image elevation-1">
+                            </div>
+                        {% endif %}
+                        <div class="article__body">
+                            <h2 class="title title--3 title--underline mb-55">{{ project.title }}</h2>
+                            <p class="text text--secondary mb-40">{{ project.description }}</p>
+                            <ul class="article__enumeration">
+                                {% for tag in project.tags %}
+                                    <li class="article__enumeration__item text--hashtag">{{ tag.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
 {% endblock %}

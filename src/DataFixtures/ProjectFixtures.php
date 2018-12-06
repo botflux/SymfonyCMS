@@ -15,7 +15,8 @@ class ProjectFixtures extends Fixture
 
         for ($i = 0; $i < 15; $i++) {
             $project = (new Project())
-                ->setTitle($faker->words(5, true))
+                ->setTitle($faker->words(2, true))
+                ->setDescription($faker->sentences(2, true))
                 ->setBody($faker->sentences(70, true))
                 ->setFilename(null)
                 ->setDoneAt($faker->dateTime())
