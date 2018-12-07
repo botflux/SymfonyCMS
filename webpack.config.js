@@ -13,6 +13,8 @@ Encore
     .addStyleEntry('sm', './assets/css/sm.css')
     .addStyleEntry('md', './assets/css/md.css')
     .addStyleEntry('md-l', './assets/css/md-l.css')
+    .addStyleEntry('lg', './assets/css/lg.css')
+    .addStyleEntry('xl', './assets/css/xl.css')
     /*
      * ENTRY CONFIG
      *

@@ -3,7 +3,9 @@
 =========================================*/
 .landing {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: .6fr .4fr;
     direction: rtl;
     grid-gap: 40px;
 }

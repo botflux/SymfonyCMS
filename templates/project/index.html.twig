@@ -6,9 +6,9 @@
     <main class="content">
         <section class="content__section">
             <p class="text--overline">Project web & software</p>
-            <h1 class="title title--1 mb-55">Projets</h1>
+            <h1 class="title title--1 mb-2">Projets</h1>
 
-            <p class="text text--secondary mb-75">Voici les différents projets sur lesquels j'ai pu travailler.</p>
+            <p class="text text--secondary mb-3">Voici les différents projets sur lesquels j'ai pu travailler.</p>
 
             <div class="article-holder">
                 {% for project in projects %}
@@ -17,12 +17,16 @@
                             <div class="article__image__container">
                                 <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('article_image') }}" alt="A super image" class="article__image elevation-1">
                             </div>
+                        {% else %}
+                            <div class="article__image__container">
+                                <img src="{{ asset('images/projects/no.jpg') | imagine_filter('article_image') }}" alt="Default image" class="article__image elevation-1">
+                            </div>
                         {% endif %}
                         <div class="article__body">
                             <p class="text--overline">{{ project.category ? project.category.name : '' }}</p>
-                            <h2 class="title title--3 title--underline mb-55 mr-auto">{{ project.title }}</h2>
-                            <p class="text text--secondary mb-40">{{ project.description }}</p>
-                            <ul class="article__enumeration mb-55">
+                            <h2 class="title title--3 title--underline mb-2 mr-auto">{{ project.title }}</h2>
+                            <p class="text text--secondary mb-1">{{ project.description }}</p>
+                            <ul class="article__enumeration mb-2">
                                 {% for tag in project.tags %}
                                     <li class="article__enumeration__item text--hashtag">{{ tag.name }}</li>
                                 {% endfor %}
