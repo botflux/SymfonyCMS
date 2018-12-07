@@ -15,6 +15,7 @@ Encore
     .addStyleEntry('md-l', './assets/css/md-l.css')
     .addStyleEntry('lg', './assets/css/lg.css')
     .addStyleEntry('xl', './assets/css/xl.css')
+    .addStyleEntry('hover', './assets/css/hover.css')
     /*
      * ENTRY CONFIG
      *
