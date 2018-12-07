@@ -1,10 +1,33 @@
 <header class="header">
     <a href="{{ path('home.index') }}" class="header__brand text--primary">Victor Mendele</a>
-    <nav class="nav">
-        <label for="nothing" class="material-icons text--primary">menu</label>
+    <nav class="nav" data-nav>
+        <label for="nothing" class="material-icons text--primary nav__menu" data-menu>menu</label>
+        <ul class="nav__list--icons">
+            <li class="nav__list__item">
+                <a href="#" class="nav-link"><i class="fab fa-codepen"></i></a>
+            </li>
+            <li class="nav__list__item">
+                <a href="#" class="nav-link"><i class="fab fa-pinterest"></i></a>
+            </li>
+            <li class="nav__list__item">
+                <a href="#" class="nav-link"><i class="fab fa-github"></i></a>
+            </li>
+        </ul>
         <ul class="nav__list">
             <li class="nav__list__item">
                 <a href="#" class="nav-link">Accueil</a>
+            </li>
+            <li class="nav__list__item">
+                <a href="#" class="nav-link">A propos</a>
+            </li>
+            <li class="nav__list__item">
+                <a href="#" class="nav-link">Projets</a>
+            </li>
+            <li class="nav__list__item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+            <li class="nav__list__item">
+                <a href="#" class="nav-link">CV</a>
             </li>
         </ul>
     </nav>

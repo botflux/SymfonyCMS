@@ -26,6 +26,27 @@
     grid-template-columns: .4fr 1fr;
 }
 
+/*===================================================
+    Nav
+===================================================*/
+.nav__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 35px;
+
+    margin-right: 65px;
+}
+
+.nav-link {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.nav__menu {
+    display: none;
+}
+
 /*=========================================================
     Card
 =========================================================*/

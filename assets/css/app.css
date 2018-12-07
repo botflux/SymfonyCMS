@@ -67,11 +67,22 @@ a {
 =======================================*/
 .nav {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
 }
 
 .nav__list {
     display: none;
+}
+
+.nav__list--icons {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__list__item {
+    list-style: none;
 }
 
 /*==========================================
@@ -365,4 +376,61 @@ a {
     right: 0;
     left: 0;
     z-index: -5000;
+}
+
+@media screen and (max-width: 1200px) {
+    .nav--active {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+
+        background: var(--background-darker);
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        grid-gap: 55px;
+    }
+
+    .nav--active .nav__list {
+        display: grid;
+        align-content: center;
+        align-items: center;
+    }
+
+    .nav--active .nav__list--icons {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 24px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .nav--active .nav__list {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .nav--active .nav-link {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 2.4rem;
+    }
+
+    .nav--active .nav__menu {
+        margin: 0 auto;
+    }
+
+    .nav--active .nav__list--icons .fab {
+        font-size: 1.8rem;
+    }
 }

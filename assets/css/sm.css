@@ -5,6 +5,31 @@
     padding: 0 80px 120px 80px;
 }
 
+/*========================================================
+    Nav
+========================================================*/
+.nav__list--icons {
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 35px;
+    margin: 0;
+}
+
+.nav__list__item {
+    list-style: none;
+    color: #fff;
+}
+
+.fab {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.nav__menu {
+    margin-left: 24px;
+}
+
 /*================================================
     Card holder
 ================================================*/
