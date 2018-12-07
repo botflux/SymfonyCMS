@@ -54,6 +54,7 @@ class AdminCategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->manager->persist($category);
             $this->manager->flush();
+            $this->addFlash('success', 'Your category has been created');
 
             return $this->redirectToRoute('admin.category.index', [], 301);
         }
@@ -76,6 +77,7 @@ class AdminCategoryController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->manager->flush();
+            $this->addFlash('success', 'Your category has been modified');
 
             return $this->redirectToRoute('admin.category.index', [], 301);
         }
@@ -94,6 +96,7 @@ class AdminCategoryController extends AbstractController
     {
         $this->manager->remove($category);
         $this->manager->flush();
+        $this->addFlash('primary', 'Your category has been deleted');
 
         return $this->redirectToRoute('admin.category.index', [], 301);
     }

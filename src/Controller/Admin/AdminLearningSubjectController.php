@@ -54,6 +54,7 @@ class AdminLearningSubjectController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->manager->flush();
+            $this->addFlash('success', 'Your tag has been modified');
             return $this->redirectToRoute('admin.learning-subject.index');
         }
 
@@ -71,6 +72,7 @@ class AdminLearningSubjectController extends AbstractController
     {
         $this->manager->remove($learningSubject);
         $this->manager->flush();
+        $this->addFlash('primary', 'Your learning has been deleted');
 
         return $this->redirectToRoute('admin.learning-subject.index', [], 301);
     }
@@ -89,6 +91,7 @@ class AdminLearningSubjectController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->manager->persist($learningSubject);
             $this->manager->flush();
+            $this->addFlash('success', 'Your learning subject has been created');
 
             return $this->redirectToRoute('admin.learning-subject.index');
         }

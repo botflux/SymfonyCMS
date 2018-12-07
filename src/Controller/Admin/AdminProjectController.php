@@ -57,6 +57,7 @@ class AdminProjectController extends AbstractController
             $project = $projectForm->getData();
             $this->manager->persist($project);
             $this->manager->flush();
+            $this->addFlash('success', 'Your project has been created !');
             return $this->redirectToRoute('admin.project.index', [], 301);
         }
 
@@ -82,6 +83,8 @@ class AdminProjectController extends AbstractController
             $project->setUpdatedAt(new \DateTime());
             $this->manager->flush();
 
+            $this->addFlash('success', 'Your project has been updated !');
+
             return $this->redirectToRoute('admin.project.index', [], 301);
         }
 
@@ -100,6 +103,7 @@ class AdminProjectController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->remove($project);
         $em->flush();
+        $this->addFlash('primary', 'Your project has been deleted !');
 
         return $this->redirectToRoute('admin.project.index');
     }

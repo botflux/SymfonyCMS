@@ -11,6 +11,16 @@
 <section class="section columns">
     {% include 'admin/_modules/header.html.twig' %}
     <div class="container mt-4">
+        <div class="d-flex mb-4">
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+
+                    <div class="alert alert-{{ label }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
         {% block body %}{% endblock %}
     </div>
 </section>

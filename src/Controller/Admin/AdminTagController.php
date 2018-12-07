@@ -58,6 +58,8 @@ class AdminTagController extends AbstractController
             $this->manager->persist($tag);
             $this->manager->flush();
 
+            $this->addFlash('success', 'Your tag has been created');
+
             return $this->redirectToRoute('admin.tag.index', [], 301);
         }
 
@@ -80,6 +82,7 @@ class AdminTagController extends AbstractController
 
         if ($tagForm->isSubmitted() && $tagForm->isValid()) {
             $this->manager->flush();
+            $this->addFlash('success', 'Your tag has been modified');
             return $this->redirectToRoute('admin.tag.index', [], 301);
         }
 
@@ -97,6 +100,7 @@ class AdminTagController extends AbstractController
     {
         $this->manager->remove($tag);
         $this->manager->flush();
+        $this->addFlash('primary', 'Your tag has been deleted');
 
         return $this->redirectToRoute('admin.tag.index');
     }
