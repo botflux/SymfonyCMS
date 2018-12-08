@@ -16,9 +16,13 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+
         <div class="container">
             {% include '_modules/header.html.twig' %}
             {% block body %}{% endblock %}
+        </div>
+        <div class="loading">
+            <div class="loader"></div>
         </div>
         {{ encore_entry_script_tags('app') }}
         {% block javascripts %}{% endblock %}

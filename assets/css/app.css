@@ -40,11 +40,10 @@ a {
 
 .content {
     min-height: 100vh;
-    padding-top: 50px;
 }
 
 .content__section {
-    padding: 0 36px 120px 36px;
+    padding: 20% 36px;
 }
 
 /*=======================================
@@ -236,12 +235,12 @@ a {
     Button
 ========================================*/
 .btn {
-    font-weight: 500;
+    font-weight: 700;
     font-size: .75rem;
     letter-spacing: .052rem;
     text-transform: uppercase;
     font-family: 'Roboto Mono', monospace;
-    color: #fff;
+    color: #000;
 
     display: inline-block;
     margin-right: auto;
@@ -339,10 +338,6 @@ a {
 ============================================*/
 .special-background {
     background: var(--background-darker);
-    padding-top: 200px;
-    margin-top: -100px;
-    clip-path: url("#clip-path-background");
-
 }
 
 /*=============================================
@@ -368,16 +363,32 @@ a {
     box-shadow: 0 3px 3px 3px rgba(0,0,0,.2);
 }
 
-
-/*===================================================
-    Clip path svgs hidding
-===================================================*/
-.about-clip-path-svg {
-    position: absolute;
+/*=====================================================
+    Loading screen
+=====================================================*/
+.loading {
+    position: fixed;
     top: 0;
+    bottom: 0;
     right: 0;
     left: 0;
-    z-index: -5000;
+
+    background: var(--background-darker);
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 200px;
+    border: 1px solid var(--color-primary);
+    border-top-color: var(--background-darker);
+
+    animation: load 1s infinite;
 }
 
 @media screen and (max-width: 1200px) {
@@ -452,4 +463,14 @@ a {
 .card-holder--tiles[data-scroll] > .card {
     transform: scale(1.2);
     opacity: 0;
+}
+
+@keyframes load {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
