@@ -204,7 +204,6 @@ a {
     height: 324px;
 
     object-fit: cover;
-
 }
 
 .article__enumeration {
@@ -448,11 +447,24 @@ a {
     }
 }
 
+/*=============================================================
+    Footer
+=============================================================*/
+.footer {
+    padding: 32px;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-darker);
+}
+
 /*==============================================================
     JS Animation Reset
 ==============================================================*/
-.article {
+.article[data-scroll] {
     opacity: 0;
+    transform: translate(-500px);
 }
 
 .card[data-scroll] {
@@ -465,6 +477,20 @@ a {
     opacity: 0;
 }
 
+.nav-link {
+    opacity: 0;
+    display: inline-block;
+    transform: translateY(-50px);
+}
+
+.text[data-scroll] {
+    transform: translate(-200px);
+    opacity: 0;
+}
+
+/*================================================
+    CSS Animations
+================================================*/
 @keyframes load {
     from {
         transform: rotate(0);

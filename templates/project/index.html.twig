@@ -13,15 +13,13 @@
             <div class="article-holder">
                 {% for project in projects %}
                     <article class="article" data-scroll>
-                        {% if project.filename %}
                             <div class="article__image__container">
-                                <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('article_image') }}" alt="A super image" class="article__image elevation-1">
+                                {% if project.filename %}
+                                    <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('article_image') }}" alt="A super image" class="article__image elevation-1">
+                                {% else %}
+                                    <img src="{{ asset('images/projects/no.jpg') | imagine_filter('article_image') }}" alt="Default image" class="article__image elevation-1">
+                                {% endif %}
                             </div>
-                        {% else %}
-                            <div class="article__image__container">
-                                <img src="{{ asset('images/projects/no.jpg') | imagine_filter('article_image') }}" alt="Default image" class="article__image elevation-1">
-                            </div>
-                        {% endif %}
                         <div class="article__body">
                             <p class="text--overline">{{ project.category ? project.category.name : '' }}</p>
                             <h2 class="title title--3 title--underline mb-2 mr-auto">{{ project.title }}</h2>

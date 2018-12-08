@@ -2,10 +2,7 @@ import { TweenLite, Power4, TimelineMax, Elastic } from 'gsap'
 
 export class Animator {
     static playArticleAnimation (el) {
-        TweenLite.fromTo(el, .2, {
-            opacity: 0,
-            transform: 'translate(-500px)'
-        }, {
+        TweenLite.to(el, .2, {
             opacity: 1,
             transform: 'translate(0)',
             ease: Power4.easeOut
@@ -25,6 +22,15 @@ export class Animator {
 
     static playLearningSubjectAnimation (el) {
         let tl = new TimelineMax()
-        tl.staggerTo(el.querySelectorAll('.card'), .1, { transform: 'scale(1)', opacity: 1 }, .1)
+        tl.staggerTo(el.querySelectorAll('.card'), .1, { transform: 'scale(1)', opacity: 1, ease: Power4.easeInOut }, .1)
+    }
+
+    static playHeaderLinkAnimation () {
+        let tl = new TimelineMax()
+        tl.staggerTo(document.querySelectorAll('.nav-link'), .2, { transform: 'translateY(0)', opacity: 1 }, .2)
+    }
+
+    static playTextAnimation (el) {
+        TweenLite.to(el, .3, { opacity: 1, transform: 'translate(0)' })
     }
 }

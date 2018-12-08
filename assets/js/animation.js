@@ -1,6 +1,8 @@
 import ScrollOut from 'scroll-out'
 import {Animator} from "./animator";
 
+Animator.playHeaderLinkAnimation()
+
 ScrollOut({
     targets: '[data-scroll]',
     once: true,
@@ -14,6 +16,8 @@ ScrollOut({
             Animator.playSkillCardAnimation(el)
         } else if (el.classList.contains('card-holder--tiles')) {
             Animator.playLearningSubjectAnimation(el)
+        } else if (el.classList.contains('text')) {
+            Animator.playTextAnimation(el)
         }
     }
 })
