@@ -17,6 +17,7 @@
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^11.1.1",
         "gsap": "^2.0.2",
-        "material-icons": "^0.2.3"
+        "material-icons": "^0.2.3",
+        "scroll-out": "^2.2.4"
     }
 }

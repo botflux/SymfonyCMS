@@ -1,3 +1,5 @@
+import './animation'
+
 class MenuHandler {
     constructor (config) {
         this.menu = document.querySelector(config.menuSelector)
@@ -25,3 +27,4 @@ new MenuHandler({
     navSelector: '[data-nav]',
     navActive: 'nav--active'
 })
+

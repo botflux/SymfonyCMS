@@ -69,6 +69,8 @@ a {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+
+    transition: .5s;
 }
 
 .nav__list {
@@ -433,4 +435,21 @@ a {
     .nav--active .nav__list--icons .fab {
         font-size: 1.8rem;
     }
+}
+
+/*==============================================================
+    JS Animation Reset
+==============================================================*/
+.article {
+    opacity: 0;
+}
+
+.card[data-scroll] {
+    transform: scale(1.2);
+    opacity: 0;
+}
+
+.card-holder--tiles[data-scroll] > .card {
+    transform: scale(1.2);
+    opacity: 0;
 }

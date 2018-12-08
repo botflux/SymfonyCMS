@@ -12,7 +12,7 @@
 
             <div class="article-holder">
                 {% for project in projects %}
-                    <article class="article">
+                    <article class="article" data-scroll>
                         {% if project.filename %}
                             <div class="article__image__container">
                                 <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('article_image') }}" alt="A super image" class="article__image elevation-1">
