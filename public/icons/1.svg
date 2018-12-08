@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 157 157">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #17dc5f;
+      }
+
+      .cls-2 {
+        filter: url(#Exclusion_4);
+      }
+    </style>
+    <filter id="Exclusion_4" x="0" y="0" width="157" height="157" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#17dc5f"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-2" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <path id="Exclusion_4-2" data-name="Exclusion 4" class="cls-1" d="M-7899.5,121a60.124,60.124,0,0,1-23.55-4.754,60.3,60.3,0,0,1-19.23-12.966,60.292,60.292,0,0,1-12.966-19.231A60.121,60.121,0,0,1-7960,60.5a60.121,60.121,0,0,1,4.754-23.549A60.293,60.293,0,0,1-7942.28,17.72a60.3,60.3,0,0,1,19.23-12.966A60.124,60.124,0,0,1-7899.5,0a60.12,60.12,0,0,1,23.549,4.754,60.293,60.293,0,0,1,19.23,12.966,60.293,60.293,0,0,1,12.966,19.231A60.122,60.122,0,0,1-7839,60.5a60.122,60.122,0,0,1-4.754,23.549,60.293,60.293,0,0,1-12.966,19.231,60.293,60.293,0,0,1-19.23,12.966A60.12,60.12,0,0,1-7899.5,121Zm0-102A41.547,41.547,0,0,0-7941,60.5a41.547,41.547,0,0,0,41.5,41.5A41.547,41.547,0,0,0-7858,60.5,41.547,41.547,0,0,0-7899.5,19Z" transform="translate(7978 15)"/>
+  </g>
+</svg>
