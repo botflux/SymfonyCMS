@@ -500,3 +500,14 @@ a {
         transform: rotate(360deg);
     }
 }
+
+/*===============================================
+    Particle canvas
+===============================================*/
+[data-particles] {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+}
