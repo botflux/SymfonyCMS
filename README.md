@@ -31,5 +31,5 @@ Enter your database credentials into the .env file.
   
 ## Run
 
-`php bin/console server:run`
-`yarn encore dev-server`
+`php bin/console server:run
+yarn encore dev-server`
