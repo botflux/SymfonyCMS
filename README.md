@@ -12,24 +12,24 @@ Régler les animation du nav
 
 ## Clone the repo
 
-  git clone https://github.com/botflux/SymfonyCMS.git
+`git clone https://github.com/botflux/SymfonyCMS.git`
 
 ## Install dependencies
 
-  composer install
+`composer install`
 
 ## Create database
 
 Enter your database credentials into the .env file.
 
-  php bin/console doctrine:database:create
-  php bin/console doctrine:migrations:migrate
+`php bin/console doctrine:database:create`
+`php bin/console doctrine:migrations:migrate`
   
 ## Install front-end dependencies
 
-  yarn install
+`yarn install`
   
 ## Run
 
-  php bin/console server:run
-  yarn encore dev-server
+`php bin/console server:run`
+`yarn encore dev-server`
