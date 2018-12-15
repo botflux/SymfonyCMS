@@ -4,7 +4,7 @@
 
 {% block body %}
         <div class="d-flex mb-4">
-            <a href="{{ path('admin.tag.add') }}" class="btn btn-success">Add</a>
+            <a href="{{ path('admin.tag.add') }}" class="btn btn-success d-flex"><i class="material-icons">add</i>Add</a>
         </div>
         <table class="table table-striped">
             <thead>
@@ -22,10 +22,10 @@
                         <td>{{ tag.name }}</td>
                         <td>{{ tag.projectsCount }} project{{ tag.projectsCount > 1 ? 's' : '' }}</td>
                         <td class="d-flex">
-                            <a href="{{ path('admin.tag.edit', {id: tag.id}) }}" class="btn btn-primary mr-2">Edit</a>
+                            <a href="{{ path('admin.tag.edit', {id: tag.id}) }}" class="btn btn-primary mr-2 d-flex"><i class="material-icons">edit</i>Edit</a>
                             <form action="{{ path('admin.tag.delete', {id: tag.id}) }}" class="d-inline" method="post">
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-danger d-flex"><i class="material-icons">delete</i>Delete</button>
                             </form>
                         </td>
                     </tr>
