@@ -34,11 +34,12 @@
     grid-auto-flow: column;
 
     margin-right: 65px;
+    grid-gap: 35px;
 }
 
 .nav__list__item {
-    margin: 0 8px;
-    padding: 1.2rem;
+    display: inline-block;
+    animation: appear-from-top .2s ease-in-out forwards;
 }
 
 .nav-link {
@@ -115,4 +116,21 @@
 
 .mb-3 {
     margin-bottom: 5rem;
+}
+
+/*============================================
+    Animation
+============================================*/
+
+
+@keyframes appear-from-top {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

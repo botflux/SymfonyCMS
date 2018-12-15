@@ -31,3 +31,10 @@
 .nav-link--icon:hover {
     transform: scale(2);
 }
+
+/*=================================================
+    Magnetic link
+=================================================*/
+[data-magnetic-button] {
+    display: inline-block;
+}
