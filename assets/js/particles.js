@@ -105,13 +105,13 @@ class Particles {
         this.h = this.e.parentElement.clientHeight
         this.e.width = this.w
         this.e.height = this.h
-        this.count = Math.round(this.w * this.h * .2e-4)
+        this.count = Math.round(this.w * this.h * this.c.countFactor)
 
         for (let i = 0; i < this.count; i++) {
             this.particles = [...this.particles, ...[{
                 x: Math.random() * this.w,
                 y: Math.random() * this.h,
-                size: Math.ceil(Math.random() * (this.szMax - this.szMin) + this.szMin),
+                size: Math.ceil(Math.random() * (this.szMax - this.szMin) + this.szMin) * (Math.random()<.1 ? 10 : 1),
                 speedX: Math.random() * (this.sp - this.sp / 2),
                 speedY: Math.random() * (this.sp - this.sp / 2),
                 c: this.getRandomColor(),
@@ -128,5 +128,7 @@ new Particles({
     sizeMinAttributeName: 'data-particles-size-min',
     speedAttributeName: 'data-particles-speed',
     background: '#1d1d25',
-    particlesColors: ['#17DC5F', '#FFDD00', '#00FFEE', '#D92953', '#5A02F3']
+    particlesColors: ['#17DC5F', '#FFDD00', '#00FFEE', '#D92953', '#5A02F3'],
+    countFactor: .7e-5
 })
+
