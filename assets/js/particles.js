@@ -39,15 +39,17 @@ class Particles {
         let et = ts - this.ts
         this.ts = ts
 
+        let borderOffset = this.c.borderOffset
+
         for (let i = 0; i < this.count; i++) {
             this.particles[i].x += this.particles[i].speedX * et
             this.particles[i].y += this.particles[i].speedY * et
 
-            if (this.particles[i].x > this.w) this.particles[i].x = 0
-            else if (this.particles[i].x < 0) this.particles[i].x = this.w
+            if (this.particles[i].x > this.w + borderOffset) this.particles[i].x = -borderOffset
+            else if (this.particles[i].x < -borderOffset) this.particles[i].x = this.w + borderOffset
 
-            if (this.particles[i].y > this.h) this.particles[i].y = 0
-            else if (this.particles[i].y < 0) this.particles[i].y = this.h
+            if (this.particles[i].y > this.h + borderOffset) this.particles[i].y = -borderOffset
+            else if (this.particles[i].y < -borderOffset) this.particles[i].y = this.h + borderOffset
 
             this.ctx.fillStyle = this.particles[i].c
             this.ctx.strokeStyle = this.particles[i].c
@@ -59,25 +61,25 @@ class Particles {
             }
 
             this.ctx.beginPath()
-            if (this.particles[i].shape === 0){
+            if (this.particles[i].shape === 0){ // circle
                 this.ctx.arc(this.particles[i].x, this.particles[i].y, this.particles[i].size, 0, 2 * Math.PI, !0)
                 this.ctx.lineWidth = this.particles[i].size * .5
                 this.ctx.stroke()
             }
-            else if (this.particles[i].shape === 1) {
+            else if (this.particles[i].shape === 1) { // triangles
                 this.ctx.moveTo(this.particles[i].x, this.particles[i].y)
                 this.ctx.lineTo(this.particles[i].x + this.particles[i].size, this.particles[i].y)
                 this.ctx.lineTo(this.particles[i].x, this.particles[i].y + this.particles[i].size)
                 this.ctx.fill()
-            } else if (this.particles[i].shape === 2) {
-                this.ctx.lineWidth = 1
+            } else if (this.particles[i].shape === 2) { // cross
+                this.ctx.lineWidth = this.particles[i].size / 5
                 this.ctx.moveTo(this.particles[i].x - this.particles[i].size / 2, this.particles[i].y)
                 this.ctx.lineTo(this.particles[i].x + this.particles[i].size / 2, this.particles[i].y)
                 this.ctx.stroke()
                 this.ctx.moveTo(this.particles[i].x, this.particles[i].y - this.particles[i].size / 2)
                 this.ctx.lineTo(this.particles[i].x, this.particles[i].y + this.particles[i].size / 2)
                 this.ctx.stroke()
-            } else if (this.particles[i].shape === 3) {
+            } else if (this.particles[i].shape === 3) { // squares
                 this.ctx.moveTo(this.particles[i].x, this.particles[i].y)
                 this.ctx.lineTo(this.particles[i].size + this.particles[i].x, this.particles[i].y)
                 this.ctx.lineTo(this.particles[i].size + this.particles[i].x, this.particles[i].y + this.particles[i].size)
@@ -94,7 +96,6 @@ class Particles {
      */
     getRandomShape () {
         return Math.round(Math.random() * 3)
-
     }
 
     /**
@@ -129,6 +130,7 @@ new Particles({
     speedAttributeName: 'data-particles-speed',
     background: '#1d1d25',
     particlesColors: ['#17DC5F', '#FFDD00', '#00FFEE', '#D92953', '#5A02F3'],
-    countFactor: .7e-5
+    countFactor: .7e-5,
+    borderOffset: 70
 })
 
