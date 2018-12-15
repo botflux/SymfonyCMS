@@ -477,12 +477,6 @@ a {
     opacity: 0;
 }
 
-.nav-link {
-    opacity: 0;
-    display: inline-block;
-    transform: translateY(-50px);
-}
-
 .text[data-scroll] {
     transform: translate(-200px);
     opacity: 0;
@@ -510,4 +504,11 @@ a {
     left: 0;
 
     z-index: -1;
+}
+
+/*=================================================
+    Magnetic link
+=================================================*/
+[data-magnetic-button] {
+    display: inline-block;
 }

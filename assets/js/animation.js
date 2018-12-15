@@ -1,7 +1,7 @@
 import ScrollOut from 'scroll-out'
 import {Animator} from "./animator";
 
-Animator.playHeaderLinkAnimation()
+//Animator.playHeaderLinkAnimation()
 
 ScrollOut({
     targets: '[data-scroll]',

@@ -32,9 +32,13 @@
 .nav__list {
     display: grid;
     grid-auto-flow: column;
-    grid-gap: 35px;
 
     margin-right: 65px;
+}
+
+.nav__list__item {
+    margin: 0 8px;
+    padding: 1.2rem;
 }
 
 .nav-link {
