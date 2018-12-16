@@ -32,7 +32,7 @@ class AdminApplicationSettingsController extends AbstractController
     }
 
     /**
-     * @Route("/admin/application-settings", name="admin.application-settings.index", methods="GET")
+     * @Route("/admin/application-settings", name="admin.application-settings.index", methods="GET|POST")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Doctrine\ORM\NonUniqueResultException
@@ -45,6 +45,7 @@ class AdminApplicationSettingsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $this->addFlash('success', 'Application settings has been edited.');
             $this->manager->flush();
         }
 
