@@ -19,6 +19,18 @@ class ApplicationSettingsRepository extends ServiceEntityRepository
         parent::__construct($registry, ApplicationSettings::class);
     }
 
+    /**
+     * Returns the application settings, I create this method because there is only one settings row in database
+     * @return ApplicationSettings|null
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findSettings() : ?ApplicationSettings
+    {
+        return $this->createQueryBuilder('a')
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     // /**
     //  * @return ApplicationSettings[] Returns an array of ApplicationSettings objects
     //  */
