@@ -1,6 +1,14 @@
 {{ form_start(_form) }}
+<div class="form-group">
     {{ form_row(_form.email) }}
+</div>
+<div class="form-group">
     {{ form_row(_form.websiteName) }}
+</div>
+<div class="form-group">
     {{ form_row(_form.tagline) }}
-    <button type="submit">{{ _buttonLabel }}</button>
+</div>
+<div class="form-group">
+    <button type="submit" class="btn btn-primary d-flex"><i class="material-icons">edit</i>{{ _buttonLabel }}</button>
+</div>
 {{ form_end(_form) }}

@@ -4,3 +4,4 @@ twig:
     strict_variables: '%kernel.debug%'
     globals:
         application_settings: '@App\Service\ApplicationSettingsService'
+    form_themes: ['bootstrap_4_layout.html.twig']
