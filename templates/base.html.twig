@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="{{ asset('build/xl.css') }}" media="screen and (min-width: 1800px)">
         <link rel="stylesheet" href="{{ asset('build/hover.css') }}" media="screen and (hover: hover)">
 
-        <title>{{ application_settings.applicationSettings.websiteName }}{% block title %}Welcome!{% endblock %}</title>
+        <title>{{ application_settings.applicationSettings.websiteName }} - {% block title %}Welcome!{% endblock %}</title>
+        {% block meta %}{% endblock %}
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
