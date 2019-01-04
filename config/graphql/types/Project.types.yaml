@@ -8,3 +8,5 @@ Project:
                 type: "String!"
             description:
                 type: "String"
+            filename:
+                type: "String"
