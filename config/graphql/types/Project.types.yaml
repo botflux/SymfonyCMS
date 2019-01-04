@@ -6,3 +6,5 @@ Project:
                 type: "Int!"
             title:
                 type: "String!"
+            description:
+                type: "String"

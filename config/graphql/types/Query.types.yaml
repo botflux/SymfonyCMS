@@ -2,9 +2,15 @@ Query:
     type: object
     config:
         fields:
-            projects:
+            project:
                 type: "Project"
                 args:
                     id:
                         type: "Int!"
                 resolve: "@=resolver('Project', [args])"
+            projects:
+                type: "[Project]"
+                args:
+                    limit:
+                        type: "Int"
+                resolve: "@=resolver('Projects', [args])"
