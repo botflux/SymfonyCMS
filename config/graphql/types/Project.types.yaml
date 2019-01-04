@@ -1,0 +1,8 @@
+Project:
+    type: object
+    config:
+        fields:
+            id:
+                type: "Int!"
+            title:
+                type: "String!"

@@ -1,0 +1,10 @@
+Query:
+    type: object
+    config:
+        fields:
+            projects:
+                type: "Project"
+                args:
+                    id:
+                        type: "Int!"
+                resolve: "@=resolver('Project', [args])"
