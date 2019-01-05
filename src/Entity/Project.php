@@ -9,8 +9,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
  * @UniqueEntity("title")
  * @Vich\Uploadable()
@@ -78,6 +80,21 @@ class Project
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="projects")
      */
     private $category;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $difficulties;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $team;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $role;
 
     public function __construct()
     {
@@ -237,4 +254,39 @@ class Project
         return $this;
     }
 
+    public function getDifficulties(): ?string
+    {
+        return $this->difficulties;
+    }
+
+    public function setDifficulties(string $difficulties): self
+    {
+        $this->difficulties = $difficulties;
+
+        return $this;
+    }
+
+    public function getTeam(): ?string
+    {
+        return $this->team;
+    }
+
+    public function setTeam(?string $team): self
+    {
+        $this->team = $team;
+
+        return $this;
+    }
+
+    public function getRole(): ?string
+    {
+        return $this->role;
+    }
+
+    public function setRole(?string $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
 }

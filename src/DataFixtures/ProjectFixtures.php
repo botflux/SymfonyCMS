@@ -20,6 +20,9 @@ class ProjectFixtures extends Fixture
                 ->setBody($faker->sentences(70, true))
                 ->setFilename(null)
                 ->setDoneAt($faker->dateTime())
+                ->setDifficulties($faker->sentences(4, true))
+                ->setTeam($faker->sentences(4, true))
+                ->setRole($faker->sentences(4, true))
                 ;
 
             $manager->persist($project);
